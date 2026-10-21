@@ -36,8 +36,13 @@ que devo usar???????? *@
             <td>@produto.Nome</td>
             <td>R$ @produto.Preco.ToString("F2")</td>
             <td>@produto.Estoque</td>
-            <td>
-                <button class="btn btn-primary">Detalhes</button>
+             <td>
+                    <a asp-action="Details" asp-route-id="@produto.Id" class="btn btn-primary">
+                        Editar
+                    </a>
+                    <a asp-action="delete" asp-route-id="@produto.Id" class="btn btn-danger">
+                        Excluir
+                    </a>
             </td>
         </tr>
     }

@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace TechStoreMvc.Models;
 
@@ -7,8 +8,18 @@ public class Produto
     // Passo 01 - Criar as Models
     // Atributos
 
+    
     public int Id {get; set;} // Get para obter um id = Identificador
                              // Set para definir um novo valor, atualizar e etc...
+
+    [Required(ErrorMessage = "Informe um nome")]
+    [StringLength(
+        100,
+        MinimumLength = 3,
+        ErrorMessage = "O nome deve possuir entre 3 e 100 caracteres"
+
+    )]
+                          
     public string Nome {get; set;}
     public decimal Preco {get; set;}
     public int Estoque {get; set;}
